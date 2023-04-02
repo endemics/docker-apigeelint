@@ -1,0 +1,19 @@
+---
+name: build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build docker image
+        run: make
+
+      - name: List docker images
+        run: docker images
+
